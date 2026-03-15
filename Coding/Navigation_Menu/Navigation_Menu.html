@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Menu Showcase</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Navigation_Menu.css">
+</head>
+<body class="bg-gray-50">
+
+    <!-- Horizontal Navigation -->
+    <nav class="horizontal-nav">
+        <div class="nav-brand">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+            <span>Brand</span>
+        </div>
+        
+        <ul class="nav-menu">
+            <li class="nav-item active">
+                <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item has-dropdown">
+                <a href="#" class="nav-link">
+                    Products
+                    <svg class="dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#" class="dropdown-item">Web Design</a></li>
+                    <li><a href="#" class="dropdown-item">Development</a></li>
+                    <li><a href="#" class="dropdown-item">Marketing</a></li>
+                    <li class="has-submenu">
+                        <a href="#" class="dropdown-item">
+                            More
+                            <svg class="submenu-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="#" class="dropdown-item">Consulting</a></li>
+                            <li><a href="#" class="dropdown-item">Support</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item has-dropdown">
+                <a href="#" class="nav-link">
+                    Services
+                    <svg class="dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#" class="dropdown-item">Consulting</a></li>
+                    <li><a href="#" class="dropdown-item">Implementation</a></li>
+                    <li><a href="#" class="dropdown-item">Training</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Contact</a>
+            </li>
+        </ul>
+
+        <div class="nav-actions">
+            <button class="nav-btn nav-btn-secondary">Sign In</button>
+            <button class="nav-btn nav-btn-primary">Get Started</button>
+        </div>
+
+        <!-- Mobile Toggle -->
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-nav-list">
+            <li><a href="#" class="mobile-nav-link active">Home</a></li>
+            <li class="mobile-dropdown">
+                <button class="mobile-nav-link mobile-dropdown-toggle" id="mobileDropdown1">
+                    Products
+                    <svg class="mobile-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </button>
+                <ul class="mobile-dropdown-menu">
+                    <li><a href="#" class="mobile-dropdown-item">Web Design</a></li>
+                    <li><a href="#" class="mobile-dropdown-item">Development</a></li>
+                    <li><a href="#" class="mobile-dropdown-item">Marketing</a></li>
+                </ul>
+            </li>
+            <li class="mobile-dropdown">
+                <button class="mobile-nav-link mobile-dropdown-toggle" id="mobileDropdown2">
+                    Services
+                    <svg class="mobile-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </button>
+                <ul class="mobile-dropdown-menu">
+                    <li><a href="#" class="mobile-dropdown-item">Consulting</a></li>
+                    <li><a href="#" class="mobile-dropdown-item">Implementation</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="mobile-nav-link">About</a></li>
+            <li><a href="#" class="mobile-nav-link">Contact</a></li>
+        </ul>
+        <div class="mobile-actions">
+            <button class="nav-btn nav-btn-secondary w-full">Sign In</button>
+            <button class="nav-btn nav-btn-primary w-full">Get Started</button>
+        </div>
+    </div>
+
+    <!-- Vertical Sidebar -->
+    <div class="layout-container">
+        <aside class="vertical-nav">
+            <div class="sidebar-header">
+                <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
+                </svg>
+                <span class="sidebar-title">Dashboard</span>
+            </div>
+            
+            <ul class="sidebar-menu">
+                <li class="sidebar-item active">
+                    <a href="#" class="sidebar-link">
+                        <svg class="sidebar-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                        </svg>
+                        <span>Overview</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">
+                        <svg class="sidebar-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                        <span>Analytics</span>
+                        <span class="sidebar-badge">New</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">
+                        <svg class="sidebar-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+                        </svg>
+                        <span>Customers</span>
+                    </a>
+                </li>
+                <li class="sidebar-item has-dropdown" id="sidebarItem1">
+                    <button class="sidebar-link sidebar-toggle">
+                        <svg class="sidebar-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+                        </svg>
+                        <span>Products</span>
+                        <svg class="sidebar-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                    <ul class="sidebar-submenu">
+                        <li><a href="#" class="sidebar-subitem">All Products</a></li>
+                        <li><a href="#" class="sidebar-subitem">Categories</a></li>
+                        <li><a href="#" class="sidebar-subitem">Inventory</a></li>
+                    </ul>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">
+                        <svg class="sidebar-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                        <span>Settings</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80" alt="User" class="user-avatar">
+                    <div class="user-info">
+                        <p class="user-name">John Doe</p>
+                        <p class="user-role">Admin</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <h1 class="text-3xl font-bold text-gray-900 mb-4">Navigation Demo</h1>
+            <p class="text-gray-600 mb-8">Resize the browser window to see responsive behavior. Try hovering over menu items and clicking dropdown arrows.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="font-semibold text-gray-900 mb-2">Horizontal Nav Features</h3>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Sticky positioning with blur backdrop</li>
+                        <li>• Multi-level dropdown menus</li>
+                        <li>• Animated hamburger toggle</li>
+                        <li>• Active state indicators</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="font-semibold text-gray-900 mb-2">Vertical Nav Features</h3>
+                    <ul class="text-sm text-gray-600 space-y-1">
+                        <li>• Collapsible sidebar sections</li>
+                        <li>• Icon + text layout</li>
+                        <li>• Badge notifications</li>
+                        <li>• User profile footer</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="Navigation_Menu.js"></script>
+</body>
+</html>

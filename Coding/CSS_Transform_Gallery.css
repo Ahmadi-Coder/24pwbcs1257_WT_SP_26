@@ -1,0 +1,604 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #6366f1;
+    --primary-dark: #4f46e5;
+    --secondary: #ec4899;
+    --accent: #f59e0b;
+    --dark: #1e293b;
+    --light: #f8fafc;
+    --gray: #64748b;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+    color: var(--light);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Header */
+.gallery-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.gallery-header h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 16px;
+}
+
+.gallery-header p {
+    color: var(--gray);
+    font-size: 1.2rem;
+}
+
+/* Sections */
+.transform-section {
+    margin-bottom: 80px;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 32px;
+    padding-left: 20px;
+    border-left: 4px solid var(--primary);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* Cards */
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 60px -15px rgba(0, 0, 0, 0.4);
+    border-color: rgba(99, 102, 241, 0.3);
+}
+
+.card-info {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.card-info h3 {
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.card-info code {
+    display: block;
+    background: rgba(15, 23, 42, 0.6);
+    color: #818cf8;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-family: 'Courier New', monospace;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+/* Transform Box Base */
+.transform-box {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.4);
+}
+
+.box-content {
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-align: center;
+    pointer-events: none;
+}
+
+/* ========== SECTION 1: BASIC TRANSFORMS ========== */
+
+/* Rotation */
+.rotate-demo {
+    transition: transform 0.5s ease;
+    cursor: pointer;
+}
+
+.rotate-demo:hover {
+    transform: rotate(45deg);
+}
+
+/* Scale */
+.scale-demo {
+    transition: transform 0.5s ease;
+    cursor: pointer;
+}
+
+.scale-demo:hover {
+    transform: scale(1.5);
+}
+
+/* Translate */
+.translate-demo {
+    transition: transform 0.5s ease;
+    cursor: pointer;
+}
+
+.translate-demo:hover {
+    transform: translate(30px, -20px);
+}
+
+/* Skew */
+.skew-demo {
+    transition: transform 0.5s ease;
+    cursor: pointer;
+}
+
+.skew-demo:hover {
+    transform: skew(20deg, 10deg);
+}
+
+/* ========== SECTION 2: TRANSFORM ORIGIN ========== */
+
+.origin-marker {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: #ef4444;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    z-index: 10;
+}
+
+/* Center */
+.origin-center .origin-marker {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.origin-center {
+    transform-origin: center;
+    transition: transform 0.5s ease;
+    cursor: pointer;
+}
+
+.origin-center:hover {
+    transform: rotate(45deg);
+}
+
+/* Top Left */
+.origin-topleft .origin-marker {
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+}
+
+.origin-topleft {
+    transform-origin: 0 0;
+    transition: transform 0.5s ease;
+    cursor: pointer;
+}
+
+.origin-topleft:hover {
+    transform: rotate(45deg);
+}
+
+/* Bottom Right */
+.origin-bottomright .origin-marker {
+    bottom: 0;
+    right: 0;
+    transform: translate(50%, 50%);
+}
+
+.origin-bottomright {
+    transform-origin: 100% 100%;
+    transition: transform 0.5s ease;
+    cursor: pointer;
+}
+
+.origin-bottomright:hover {
+    transform: rotate(45deg);
+}
+
+/* Custom */
+.origin-custom .origin-marker {
+    top: 70%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+}
+
+.origin-custom {
+    transform-origin: 30% 70%;
+    transition: transform 0.5s ease;
+    cursor: pointer;
+}
+
+.origin-custom:hover {
+    transform: rotate(45deg);
+}
+
+/* ========== SECTION 3: 3D TRANSFORMS ========== */
+
+.perspective-card {
+    perspective: 1000px;
+}
+
+.transform-box-3d {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: white;
+    border-radius: 16px;
+    backface-visibility: hidden;
+}
+
+.face.front {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+}
+
+.face.back {
+    background: linear-gradient(135deg, var(--secondary), var(--accent));
+    transform: rotateX(180deg);
+}
+
+/* Rotate X */
+.rotate-x-3d {
+    transition: transform 0.8s ease;
+    cursor: pointer;
+}
+
+.rotate-x-3d:hover {
+    transform: rotateX(180deg);
+}
+
+/* Rotate Y */
+.rotate-y-3d .face.back {
+    transform: rotateY(180deg);
+}
+
+.rotate-y-3d {
+    transition: transform 0.8s ease;
+    cursor: pointer;
+}
+
+.rotate-y-3d:hover {
+    transform: rotateY(180deg);
+}
+
+/* Rotate Z */
+.rotate-z-3d {
+    background: linear-gradient(135deg, #06b6d4, #3b82f6);
+    transition: transform 0.5s ease;
+    cursor: pointer;
+}
+
+.rotate-z-3d:hover {
+    transform: perspective(500px) rotateZ(45deg) translateZ(50px);
+}
+
+/* 3D Cube */
+.cube {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotateCube 8s infinite linear;
+    margin: 25px auto;
+}
+
+@keyframes rotateCube {
+    0% { transform: rotateX(0deg) rotateY(0deg); }
+    25% { transform: rotateX(90deg) rotateY(90deg); }
+    50% { transform: rotateX(180deg) rotateY(180deg); }
+    75% { transform: rotateX(270deg) rotateY(270deg); }
+    100% { transform: rotateX(360deg) rotateY(360deg); }
+}
+
+.cube-face {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 800;
+    color: white;
+    border: 2px solid rgba(255,255,255,0.3);
+    opacity: 0.95;
+}
+
+.cube-front  { 
+    background: var(--primary); 
+    transform: translateZ(50px); 
+}
+.cube-back   { 
+    background: var(--secondary); 
+    transform: rotateY(180deg) translateZ(50px); 
+}
+.cube-right  { 
+    background: #8b5cf6; 
+    transform: rotateY(90deg) translateZ(50px); 
+}
+.cube-left   { 
+    background: #06b6d4; 
+    transform: rotateY(-90deg) translateZ(50px); 
+}
+.cube-top    { 
+    background: #10b981; 
+    transform: rotateX(90deg) translateZ(50px); 
+}
+.cube-bottom { 
+    background: var(--accent); 
+    transform: rotateX(-90deg) translateZ(50px); 
+}
+
+/* ========== SECTION 4: COMBINED TRANSFORMS ========== */
+
+.combined-1 {
+    background: linear-gradient(135deg, #8b5cf6, #ec4899);
+    transition: transform 0.5s ease;
+    cursor: pointer;
+}
+
+.combined-1:hover {
+    transform: scale(1.2) rotate(15deg);
+}
+
+.combined-2 {
+    background: linear-gradient(135deg, #06b6d4, #3b82f6);
+    transition: transform 0.5s ease;
+    cursor: pointer;
+}
+
+.combined-2:hover {
+    transform: translate(50px) scale(0.8);
+}
+
+.matrix-demo {
+    background: linear-gradient(135deg, #f59e0b, #ef4444);
+    transition: transform 0.5s ease;
+    cursor: pointer;
+}
+
+.matrix-demo:hover {
+    transform: matrix(1, 0.3, 0.3, 1, 0, 0);
+}
+
+.complex-demo {
+    background: linear-gradient(135deg, #10b981, #059669);
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.complex-demo:hover {
+    transform: translate(20px, -20px) scale(1.1) rotate(10deg) skew(5deg);
+}
+
+/* ========== SECTION 5: TRANSITION ANIMATIONS ========== */
+
+.transition-smooth {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.transition-smooth:hover {
+    transform: rotate(180deg) scale(1.2);
+    border-radius: 50%;
+}
+
+.transition-bounce {
+    background: linear-gradient(135deg, #f59e0b, #ef4444);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    cursor: pointer;
+}
+
+.transition-bounce:hover {
+    transform: scale(1.3) rotate(45deg);
+}
+
+.transition-slow {
+    background: linear-gradient(135deg, #06b6d4, #8b5cf6);
+    transition: all 1s ease-in-out;
+    cursor: pointer;
+}
+
+.transition-slow:hover {
+    transform: rotate(360deg) scale(0.8);
+}
+
+.transition-step {
+    background: linear-gradient(135deg, #10b981, #059669);
+    transition: all 0.6s steps(5);
+    cursor: pointer;
+}
+
+.transition-step:hover {
+    transform: translateX(50px) rotate(90deg);
+}
+
+/* ========== SECTION 6: PLAYGROUND ========== */
+
+.playground-section {
+    background: rgba(255,255,255,0.03);
+    border-radius: 30px;
+    padding: 40px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.playground {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.playground-stage {
+    min-height: 400px;
+    background: radial-gradient(circle at center, rgba(99,102,241,0.15) 0%, transparent 70%);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px;
+    border: 1px dashed rgba(99,102,241,0.3);
+}
+
+.playground-box {
+    width: 180px;
+    height: 180px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 25px 50px -12px rgba(99,102,241,0.5);
+    transition: transform 0.1s ease-out;
+    transform-style: preserve-3d;
+}
+
+.playground-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.control-group label {
+    color: var(--gray);
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+}
+
+.control-group label span {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.control-group input[type="range"] {
+    width: 100%;
+    height: 8px;
+    background: #334155;
+    border-radius: 4px;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.control-group input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--primary);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    box-shadow: 0 2px 10px rgba(99,102,241,0.4);
+}
+
+.control-group input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+.reset-btn {
+    margin-top: 20px;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(99,102,241,0.3);
+}
+
+.reset-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px -10px rgba(99,102,241,0.5);
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .playground {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-header h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-header h1 {
+        font-size: 2rem;
+    }
+    
+    .transform-box, .transform-box-3d {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .playground-box {
+        width: 150px;
+        height: 150px;
+    }
+}

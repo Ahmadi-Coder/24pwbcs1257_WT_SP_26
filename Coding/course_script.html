@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Schedule - Spring 2024</title>
+    <link rel="stylesheet" href="course_styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="page-header">
+            <h1>📚 Spring 2024 Course Schedule</h1>
+            <p class="subtitle">Computer Science Department</p>
+            
+            <!-- Filter Controls -->
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">All Courses</button>
+                <button class="filter-btn" data-filter="core">Core</button>
+                <button class="filter-btn" data-filter="elective">Elective</button>
+                <button class="filter-btn" data-filter="lab">Lab</button>
+            </div>
+        </header>
+
+        <!-- Course Schedule Table -->
+        <div class="table-wrapper">
+            <table class="course-table" id="courseTable">
+                <thead>
+                    <tr>
+                        <th>Course Code</th>
+                        <th>Course Name</th>
+                        <th>Instructor</th>
+                        <th>Schedule</th>
+                        <th>Room</th>
+                        <th>Credits</th>
+                        <th>Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-type="core">
+                        <td>CS101</td>
+                        <td>Introduction to Programming</td>
+                        <td>Dr. Sarah Johnson</td>
+                        <td>Mon, Wed 9:00-10:30</td>
+                        <td>Lab-101</td>
+                        <td>3</td>
+                        <td><span class="badge core">Core</span></td>
+                    </tr>
+                    <tr data-type="core">
+                        <td>CS201</td>
+                        <td>Data Structures & Algorithms</td>
+                        <td>Prof. Michael Chen</td>
+                        <td>Tue, Thu 11:00-12:30</td>
+                        <td>Room-305</td>
+                        <td>4</td>
+                        <td><span class="badge core">Core</span></td>
+                    </tr>
+                    <tr data-type="lab">
+                        <td>CS201L</td>
+                        <td>DSA Laboratory</td>
+                        <td>Dr. Emily Davis</td>
+                        <td>Fri 14:00-16:00</td>
+                        <td>Lab-202</td>
+                        <td>1</td>
+                        <td><span class="badge lab">Lab</span></td>
+                    </tr>
+                    <tr data-type="elective">
+                        <td>CS305</td>
+                        <td>Web Development</td>
+                        <td>Prof. James Wilson</td>
+                        <td>Mon, Wed 13:00-14:30</td>
+                        <td>Room-401</td>
+                        <td>3</td>
+                        <td><span class="badge elective">Elective</span></td>
+                    </tr>
+                    <tr data-type="core">
+                        <td>CS301</td>
+                        <td>Database Systems</td>
+                        <td>Dr. Amanda Lee</td>
+                        <td>Tue, Thu 9:00-10:30</td>
+                        <td>Room-204</td>
+                        <td>3</td>
+                        <td><span class="badge core">Core</span></td>
+                    </tr>
+                    <tr data-type="elective">
+                        <td>CS401</td>
+                        <td>Machine Learning</td>
+                        <td>Prof. Robert Taylor</td>
+                        <td>Mon, Wed 15:00-16:30</td>
+                        <td>Room-502</td>
+                        <td>3</td>
+                        <td><span class="badge elective">Elective</span></td>
+                    </tr>
+                    <tr data-type="lab">
+                        <td>CS301L</td>
+                        <td>Database Lab</td>
+                        <td>Dr. Lisa Anderson</td>
+                        <td>Thu 14:00-16:00</td>
+                        <td>Lab-303</td>
+                        <td>1</td>
+                        <td><span class="badge lab">Lab</span></td>
+                    </tr>
+                    <tr data-type="core">
+                        <td>CS202</td>
+                        <td>Object Oriented Programming</td>
+                        <td>Prof. David Brown</td>
+                        <td>Tue, Thu 13:00-14:30</td>
+                        <td>Room-301</td>
+                        <td>3</td>
+                        <td><span class="badge core">Core</span></td>
+                    </tr>
+                    <tr data-type="elective">
+                        <td>CS450</td>
+                        <td>Cybersecurity Fundamentals</td>
+                        <td>Dr. Jennifer Martinez</td>
+                        <td>Mon, Wed 11:00-12:30</td>
+                        <td>Room-405</td>
+                        <td>3</td>
+                        <td><span class="badge elective">Elective</span></td>
+                    </tr>
+                    <tr data-type="lab">
+                        <td>CS101L</td>
+                        <td>Programming Lab</td>
+                        <td>Dr. Kevin Park</td>
+                        <td>Fri 10:00-12:00</td>
+                        <td>Lab-101</td>
+                        <td>1</td>
+                        <td><span class="badge lab">Lab</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Summary Cards -->
+        <div class="summary-section">
+            <div class="summary-card">
+                <h3>Total Courses</h3>
+                <p class="count" id="totalCount">10</p>
+            </div>
+            <div class="summary-card">
+                <h3>Core Courses</h3>
+                <p class="count" id="coreCount">4</p>
+            </div>
+            <div class="summary-card">
+                <h3>Electives</h3>
+                <p class="count" id="electiveCount">3</p>
+            </div>
+            <div class="summary-card">
+                <h3>Labs</h3>
+                <p class="count" id="labCount">3</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="course_script.js"></script>
+</body>
+</html>

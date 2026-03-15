@@ -1,0 +1,95 @@
+/* BASIC SELECTORS */
+
+/* Element Selector */
+p{
+color: blue;
+}
+
+/* Class Selector */
+.redText{
+color:red;
+}
+
+/* ID Selector */
+#special{
+background-color:yellow;
+}
+
+/* Universal Selector */
+*{
+font-family: Arial;
+}
+
+/* Group Selector */
+h1, h2{
+text-align:center;
+}
+
+
+/* ATTRIBUTE SELECTORS */
+
+input[type]{
+border:2px solid black;
+}
+
+input[type="text"]{
+background-color:lightblue;
+}
+
+a[target="_blank"]{
+color:green;
+}
+
+
+/* COMBINATORS */
+
+div p{
+font-style:italic;
+}
+
+ul > li{
+color:purple;
+}
+
+h2 + p{
+background-color:lightgray;
+}
+
+h3 ~ p{
+color:orange;
+}
+
+
+/* PSEUDO CLASSES */
+
+a:hover{
+color:red;
+}
+
+li:first-child{
+font-weight:bold;
+}
+
+li:last-child{
+color:blue;
+}
+
+input:focus{
+background-color:yellow;
+}
+
+button:active{
+background-color:green;
+}
+
+
+/* PSEUDO ELEMENTS */
+
+p::first-letter{
+font-size:30px;
+color:red;
+}
+
+p::first-line{
+font-weight:bold;
+}

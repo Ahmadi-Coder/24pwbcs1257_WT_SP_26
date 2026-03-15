@@ -1,0 +1,608 @@
+/* ============================================
+   COURSE SCHEDULE STYLES
+   ============================================ */
+
+/* CSS Variables for easy theming */
+:root {
+    --primary-color: #4f46e5;
+    --primary-hover: #4338ca;
+    --secondary-color: #06b6d4;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --danger-color: #ef4444;
+    
+    --bg-color: #f8fafc;
+    --card-bg: #ffffff;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --border-color: #e2e8f0;
+    
+    --core-color: #dbeafe;
+    --core-text: #1e40af;
+    --elective-color: #dcfce7;
+    --elective-text: #166534;
+    --lab-color: #fef3c7;
+    --lab-text: #92400e;
+    
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+    
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: var(--text-primary);
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ============================================
+   HEADER STYLES
+   ============================================ */
+.page-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 40px 20px;
+    background: var(--card-bg);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-xl);
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--success-color));
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+    letter-spacing: -0.02em;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+/* ============================================
+   FILTER BUTTONS
+   ============================================ */
+.filters {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 12px 24px;
+    border: 2px solid var(--border-color);
+    background: var(--card-bg);
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.filter-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.filter-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.filter-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.filter-btn.active {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 4px 14px 0 rgba(79, 70, 229, 0.39);
+}
+
+/* ============================================
+   TABLE WRAPPER & TABLE STYLES
+   ============================================ */
+.table-wrapper {
+    background: var(--card-bg);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-xl);
+    overflow: hidden;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.course-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 0.95rem;
+}
+
+/* Table Header */
+.course-table thead {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-hover) 100%);
+    color: white;
+}
+
+.course-table th {
+    padding: 20px 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.course-table th:first-child {
+    border-radius: var(--radius-xl) 0 0 0;
+    padding-left: 24px;
+}
+
+.course-table th:last-child {
+    border-radius: 0 var(--radius-xl) 0 0;
+    padding-right: 24px;
+}
+
+/* Table Body */
+.course-table td {
+    padding: 18px 16px;
+    border-bottom: 1px solid var(--border-color);
+    transition: all 0.2s ease;
+}
+
+.course-table td:first-child {
+    padding-left: 24px;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.course-table td:last-child {
+    padding-right: 24px;
+}
+
+/* ============================================
+   ZEBRA STRIPING
+   ============================================ */
+.course-table tbody tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+.course-table tbody tr:nth-child(odd) {
+    background-color: var(--card-bg);
+}
+
+/* ============================================
+   HOVER EFFECTS ON ROWS
+   ============================================ */
+.course-table tbody tr {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.course-table tbody tr:hover {
+    background-color: #e0e7ff !important;
+    transform: scale(1.01);
+    box-shadow: var(--shadow-lg);
+    z-index: 5;
+    cursor: pointer;
+}
+
+.course-table tbody tr:hover td {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+/* Row hover indicator */
+.course-table tbody tr::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--primary-color);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.course-table tbody tr:hover::before {
+    opacity: 1;
+}
+
+/* ============================================
+   COLOR-CODED COURSE TYPES (BADGES)
+   ============================================ */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.badge.core {
+    background-color: var(--core-color);
+    color: var(--core-text);
+    border-color: #bfdbfe;
+}
+
+.badge.elective {
+    background-color: var(--elective-color);
+    color: var(--elective-text);
+    border-color: #bbf7d0;
+}
+
+.badge.lab {
+    background-color: var(--lab-color);
+    color: var(--lab-text);
+    border-color: #fde68a;
+}
+
+/* Badge hover effect */
+.course-table tbody tr:hover .badge {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Row type indicators */
+tr[data-type="core"] {
+    border-left: 4px solid var(--core-text);
+}
+
+tr[data-type="elective"] {
+    border-left: 4px solid var(--elective-text);
+}
+
+tr[data-type="lab"] {
+    border-left: 4px solid var(--lab-text);
+}
+
+/* ============================================
+   CUSTOM BORDERS AND SPACING
+   ============================================ */
+.course-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.course-table tbody tr:last-child td:first-child {
+    border-radius: 0 0 0 var(--radius-xl);
+}
+
+.course-table tbody tr:last-child td:last-child {
+    border-radius: 0 0 var(--radius-xl) 0;
+}
+
+/* Cell content styling */
+.course-table td:nth-child(2) {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.course-table td:nth-child(4) {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.course-table td:nth-child(5) {
+    font-family: 'Courier New', monospace;
+    background: #f1f5f9;
+    border-radius: var(--radius-sm);
+    padding: 8px 12px;
+    display: inline-block;
+    margin: 10px 0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* ============================================
+   SUMMARY CARDS
+   ============================================ */
+.summary-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.summary-card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.summary-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.summary-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--primary-color);
+}
+
+.summary-card:hover::before {
+    opacity: 1;
+}
+
+.summary-card h3 {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+}
+
+.summary-card .count {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1;
+}
+
+/* ============================================
+   RESPONSIVE TABLE DESIGN
+   ============================================ */
+@media screen and (max-width: 968px) {
+    .page-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .table-wrapper {
+        border-radius: var(--radius-md);
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .course-table {
+        min-width: 800px;
+    }
+    
+    .course-table th,
+    .course-table td {
+        padding: 14px 12px;
+        font-size: 0.9rem;
+    }
+    
+    /* Mobile card view for very small screens */
+    @media screen and (max-width: 640px) {
+        body {
+            padding: 10px;
+        }
+        
+        .page-header {
+            padding: 30px 15px;
+            border-radius: var(--radius-lg);
+        }
+        
+        .filters {
+            gap: 8px;
+        }
+        
+        .filter-btn {
+            padding: 10px 16px;
+            font-size: 0.85rem;
+        }
+        
+        /* Transform table to cards */
+        .table-wrapper {
+            background: transparent;
+            box-shadow: none;
+            overflow: visible;
+        }
+        
+        .course-table,
+        .course-table thead,
+        .course-table tbody,
+        .course-table th,
+        .course-table td,
+        .course-table tr {
+            display: block;
+        }
+        
+        .course-table thead {
+            display: none;
+        }
+        
+        .course-table tbody tr {
+            background: var(--card-bg);
+            margin-bottom: 20px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            padding: 20px;
+            border-left: 4px solid var(--primary-color);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .course-table tbody tr:nth-child(even),
+        .course-table tbody tr:nth-child(odd) {
+            background: var(--card-bg);
+        }
+        
+        .course-table td {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+            border: none;
+        }
+        
+        .course-table td:last-child {
+            border-bottom: none;
+        }
+        
+        .course-table td::before {
+            content: attr(data-label);
+            font-weight: 600;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .course-table td:first-child {
+            padding-left: 0;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+        
+        .course-table td:nth-child(2) {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+        }
+        
+        .course-table td:nth-child(5) {
+            display: inline-flex;
+            margin: 0;
+        }
+        
+        .badge {
+            margin-left: auto;
+        }
+        
+        /* Hide row hover effects on mobile */
+        .course-table tbody tr:hover {
+            transform: none;
+            background-color: var(--card-bg) !important;
+        }
+        
+        .course-table tbody tr::before {
+            display: none;
+        }
+        
+        /* Type-specific border colors */
+        .course-table tbody tr[data-type="core"] {
+            border-left-color: var(--core-text);
+        }
+        
+        .course-table tbody tr[data-type="elective"] {
+            border-left-color: var(--elective-text);
+        }
+        
+        .course-table tbody tr[data-type="lab"] {
+            border-left-color: var(--lab-text);
+        }
+    }
+}
+
+/* Animation for row filtering */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.course-table tbody tr.visible {
+    animation: fadeIn 0.4s ease forwards;
+}
+
+/* Loading state */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Print styles */
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+    
+    .page-header,
+    .filters,
+    .summary-section {
+        display: none;
+    }
+    
+    .table-wrapper {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+    
+    .course-table tbody tr:hover {
+        background-color: transparent !important;
+        transform: none;
+        box-shadow: none;
+    }
+}

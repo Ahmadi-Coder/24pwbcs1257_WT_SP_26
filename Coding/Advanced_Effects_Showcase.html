@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced CSS Effects Showcase</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Advanced_Effects_Showcase.css">
+</head>
+<body>
+    <div class="container">
+        
+        <!-- Header -->
+        <header class="showcase-header">
+            <h1 class="gradient-text">Advanced CSS Effects</h1>
+            <p class="subtitle">Cutting-edge techniques for modern web design</p>
+        </header>
+
+        <!-- Section 1: Gradient Text Effects -->
+        <section class="effect-section">
+            <h2 class="section-title">Gradient Text Effects</h2>
+            <div class="grid">
+                <div class="text-card">
+                    <h3 class="gradient-text-1">Sunset Glow</h3>
+                    <p class="effect-code">background-clip: text</p>
+                </div>
+                <div class="text-card">
+                    <h3 class="gradient-text-2">Ocean Waves</h3>
+                    <p class="effect-code">linear-gradient + animation</p>
+                </div>
+                <div class="text-card">
+                    <h3 class="gradient-text-3">Neon Pulse</h3>
+                    <p class="effect-code">Animated gradient shift</p>
+                </div>
+                <div class="text-card">
+                    <h3 class="gradient-text-4">Rainbow Flow</h3>
+                    <p class="effect-code">Multi-color animation</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Text Clipping with Background Images -->
+        <section class="effect-section">
+            <h2 class="section-title">Text Clipping (Background Images)</h2>
+            <div class="grid">
+                <div class="clip-card">
+                    <h3 class="clip-text-1">Nature</h3>
+                    <p class="effect-code">background-image + clip</p>
+                </div>
+                <div class="clip-card">
+                    <h3 class="clip-text-2">Galaxy</h3>
+                    <p class="effect-code">Space texture clip</p>
+                </div>
+                <div class="clip-card">
+                    <h3 class="clip-text-3">Fire</h3>
+                    <p class="effect-code">Flame animation clip</p>
+                </div>
+                <div class="clip-card">
+                    <h3 class="clip-text-4">Abstract</h3>
+                    <p class="effect-code">Pattern background</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Custom Checkboxes & Radio Buttons -->
+        <section class="effect-section">
+            <h2 class="section-title">Custom Form Controls</h2>
+            <div class="form-grid">
+                
+                <!-- Custom Checkboxes -->
+                <div class="form-card">
+                    <h3>Custom Checkboxes</h3>
+                    <label class="custom-checkbox">
+                        <input type="checkbox" checked>
+                        <span class="checkmark">
+                            <svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                        </span>
+                        <span class="label-text">Checked Option</span>
+                    </label>
+                    <label class="custom-checkbox">
+                        <input type="checkbox">
+                        <span class="checkmark">
+                            <svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                        </span>
+                        <span class="label-text">Unchecked Option</span>
+                    </label>
+                    <label class="custom-checkbox">
+                        <input type="checkbox" disabled>
+                        <span class="checkmark">
+                            <svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                        </span>
+                        <span class="label-text">Disabled Option</span>
+                    </label>
+                </div>
+
+                <!-- Custom Radio Buttons -->
+                <div class="form-card">
+                    <h3>Custom Radio Buttons</h3>
+                    <label class="custom-radio">
+                        <input type="radio" name="radio-group" checked>
+                        <span class="radiomark"></span>
+                        <span class="label-text">Selected Radio</span>
+                    </label>
+                    <label class="custom-radio">
+                        <input type="radio" name="radio-group">
+                        <span class="radiomark"></span>
+                        <span class="label-text">Unselected Radio</span>
+                    </label>
+                    <label class="custom-radio">
+                        <input type="radio" name="radio-group" disabled>
+                        <span class="radiomark"></span>
+                        <span class="label-text">Disabled Radio</span>
+                    </label>
+                </div>
+
+                <!-- Toggle Switches -->
+                <div class="form-card">
+                    <h3>Toggle Switches</h3>
+                    <label class="toggle-switch">
+                        <input type="checkbox" checked>
+                        <span class="toggle-slider">
+                            <span class="toggle-knob"></span>
+                        </span>
+                        <span class="label-text">Active Toggle</span>
+                    </label>
+                    <label class="toggle-switch">
+                        <input type="checkbox">
+                        <span class="toggle-slider">
+                            <span class="toggle-knob"></span>
+                        </span>
+                        <span class="label-text">Inactive Toggle</span>
+                    </label>
+                    <label class="toggle-switch">
+                        <input type="checkbox" disabled>
+                        <span class="toggle-slider">
+                            <span class="toggle-knob"></span>
+                        </span>
+                        <span class="label-text">Disabled Toggle</span>
+                    </label>
+                </div>
+
+                <!-- Animated Toggles -->
+                <div class="form-card">
+                    <h3>Animated Toggles</h3>
+                    <label class="toggle-animated">
+                        <input type="checkbox" checked>
+                        <span class="animated-slider">
+                            <span class="animated-knob">
+                                <span class="icon-on">✓</span>
+                                <span class="icon-off">✕</span>
+                            </span>
+                        </span>
+                        <span class="label-text">Morphing Toggle</span>
+                    </label>
+                    <label class="toggle-daynight">
+                        <input type="checkbox" id="dayNightToggle">
+                        <span class="daynight-slider">
+                            <span class="celestial-body"></span>
+                            <span class="stars">✦ ✦ ✦</span>
+                            <span class="clouds">☁ ☁</span>
+                        </span>
+                        <span class="label-text">Day / Night</span>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Loading Animations -->
+        <section class="effect-section">
+            <h2 class="section-title">CSS Loading Animations</h2>
+            <div class="loader-grid">
+                
+                <!-- Spinner -->
+                <div class="loader-card">
+                    <div class="loader spinner"></div>
+                    <p class="loader-name">Classic Spinner</p>
+                </div>
+
+                <!-- Pulse -->
+                <div class="loader-card">
+                    <div class="loader pulse"></div>
+                    <p class="loader-name">Pulse Wave</p>
+                </div>
+
+                <!-- Dots -->
+                <div class="loader-card">
+                    <div class="loader dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <p class="loader-name">Bouncing Dots</p>
+                </div>
+
+                <!-- Bars -->
+                <div class="loader-card">
+                    <div class="loader bars">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <p class="loader-name">Loading Bars</p>
+                </div>
+
+                <!-- Circle -->
+                <div class="loader-card">
+                    <div class="loader circle-loader">
+                        <svg viewBox="0 0 50 50">
+                            <circle cx="25" cy="25" r="20"></circle>
+                        </svg>
+                    </div>
+                    <p class="loader-name">SVG Circle</p>
+                </div>
+
+                <!-- Gradient -->
+                <div class="loader-card">
+                    <div class="loader gradient-spinner"></div>
+                    <p class="loader-name">Gradient Spin</p>
+                </div>
+
+                <!-- Dual Ring -->
+                <div class="loader-card">
+                    <div class="loader dual-ring"></div>
+                    <p class="loader-name">Dual Ring</p>
+                </div>
+
+                <!-- Hourglass -->
+                <div class="loader-card">
+                    <div class="loader hourglass"></div>
+                    <p class="loader-name">Hourglass</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Complex Shadow Effects -->
+        <section class="effect-section">
+            <h2 class="section-title">Complex Shadow Effects</h2>
+            <div class="shadow-grid">
+                
+                <!-- Neumorphism -->
+                <div class="shadow-card neumorphic">
+                    <h4>Neumorphism</h4>
+                    <p>Soft UI shadows</p>
+                </div>
+
+                <!-- Neon Glow -->
+                <div class="shadow-card neon-glow">
+                    <h4>Neon Glow</h4>
+                    <p>Multi-layer glow</p>
+                </div>
+
+                <!-- 3D Depth -->
+                <div class="shadow-card depth-3d">
+                    <h4>3D Depth</h4>
+                    <p>Perspective shadows</p>
+                </div>
+
+                <!-- Glassmorphism -->
+                <div class="shadow-card glassmorphic">
+                    <h4>Glassmorphism</h4>
+                    <p>Blur + shadow</p>
+                </div>
+
+                <!-- Floating -->
+                <div class="shadow-card floating">
+                    <h4>Floating</h4>
+                    <p>Animated lift</p>
+                </div>
+
+                <!-- Inner Shadow -->
+                <div class="shadow-card inner-shadow">
+                    <h4>Inner Depth</h4>
+                    <p>Inset shadows</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Interactive Demo -->
+        <section class="effect-section demo-section">
+            <h2 class="section-title">Interactive Shadow Builder</h2>
+            <div class="shadow-builder">
+                <div class="preview-area">
+                    <div class="shadow-preview" id="shadowPreview">Shadow Preview</div>
+                </div>
+                <div class="controls-area">
+                    <div class="control-group">
+                        <label>X Offset: <span id="xVal">0</span>px</label>
+                        <input type="range" id="xOffset" min="-50" max="50" value="0">
+                    </div>
+                    <div class="control-group">
+                        <label>Y Offset: <span id="yVal">10</span>px</label>
+                        <input type="range" id="yOffset" min="-50" max="50" value="10">
+                    </div>
+                    <div class="control-group">
+                        <label>Blur: <span id="blurVal">20</span>px</label>
+                        <input type="range" id="blurRadius" min="0" max="100" value="20">
+                    </div>
+                    <div class="control-group">
+                        <label>Spread: <span id="spreadVal">0</span>px</label>
+                        <input type="range" id="spreadRadius" min="-20" max="50" value="0">
+                    </div>
+                    <div class="control-group">
+                        <label>Opacity: <span id="opacityVal">0.3</span></label>
+                        <input type="range" id="shadowOpacity" min="0" max="1" step="0.1" value="0.3">
+                    </div>
+                    <div class="color-picker">
+                        <label>Shadow Color:</label>
+                        <input type="color" id="shadowColor" value="#6366f1">
+                    </div>
+                    <div class="toggle-options">
+                        <label class="inline-toggle">
+                            <input type="checkbox" id="insetShadow">
+                            <span>Inset</span>
+                        </label>
+                    </div>
+                    <button class="copy-btn" id="copyCSS">Copy CSS</button>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="Advanced_Effects_Showcase.js"></script>
+</body>
+</html>

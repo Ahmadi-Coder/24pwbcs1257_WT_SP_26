@@ -1,0 +1,68 @@
+body{
+font-family: Arial;
+text-align:center;
+background-color:#f0f0f0;
+}
+
+/* common box style */
+
+.box{
+width:600px;
+height:150px;
+margin:20px auto;
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:22px;
+border-radius:10px;
+}
+
+/* 1 Solid Color Background */
+
+.solid{
+background-color:steelblue;
+}
+
+
+/* 2 Image Background with repeat */
+
+.image-repeat{
+background-image:url("pattern.png");
+background-repeat:repeat;
+color:black;
+}
+
+
+/* 3 Linear Gradient */
+
+.linear{
+background:linear-gradient(to right, red, orange, yellow);
+}
+
+
+/* 4 Radial Gradient */
+
+.radial{
+background:radial-gradient(circle, purple, black);
+}
+
+
+/* 5 Multiple Background Layers */
+
+.multiple{
+background-image:
+url("pattern.png"),
+linear-gradient(to right, blue, green);
+background-blend-mode:overlay;
+}
+
+
+/* 6 Background Blend Mode */
+
+.blend{
+background-image:url("pattern.png");
+background-color:orange;
+background-blend-mode:multiply;
+color:black;
+}

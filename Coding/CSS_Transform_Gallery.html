@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transform Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS_Transform_Gallery.css">
+</head>
+<body>
+    <div class="container">
+        <header class="gallery-header">
+            <h1>CSS Transform Gallery</h1>
+            <p>Pure CSS transforms — no images needed</p>
+        </header>
+
+        <!-- Section 1: Basic Transforms -->
+        <section class="transform-section">
+            <h2 class="section-title">Basic Transforms (2D)</h2>
+            <div class="grid">
+                
+                <!-- Rotation -->
+                <div class="card">
+                    <div class="transform-box rotate-demo">
+                        <div class="box-content">Rotate</div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Rotation</h3>
+                        <code>transform: rotate(45deg)</code>
+                    </div>
+                </div>
+
+                <!-- Scale -->
+                <div class="card">
+                    <div class="transform-box scale-demo">
+                        <div class="box-content">Scale</div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Scaling</h3>
+                        <code>transform: scale(1.5)</code>
+                    </div>
+                </div>
+
+                <!-- Translate -->
+                <div class="card">
+                    <div class="transform-box translate-demo">
+                        <div class="box-content">Move</div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Translation</h3>
+                        <code>transform: translate(30px, -20px)</code>
+                    </div>
+                </div>
+
+                <!-- Skew -->
+                <div class="card">
+                    <div class="transform-box skew-demo">
+                        <div class="box-content">Skew</div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Skew</h3>
+                        <code>transform: skew(20deg, 10deg)</code>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Transform Origin -->
+        <section class="transform-section">
+            <h2 class="section-title">Transform Origin</h2>
+            <div class="grid">
+                
+                <!-- Center -->
+                <div class="card">
+                    <div class="transform-box origin-center">
+                        <div class="origin-marker"></div>
+                        <div class="box-content">Center</div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Center (default)</h3>
+                        <code>transform-origin: center</code>
+                    </div>
+                </div>
+
+                <!-- Top Left -->
+                <div class="card">
+                    <div class="transform-box origin-topleft">
+                        <div class="origin-marker"></div>
+                        <div class="box-content">Top Left</div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Top Left</h3>
+                        <code>transform-origin: 0 0</code>
+                    </div>
+                </div>
+
+                <!-- Bottom Right -->
+                <div class="card">
+                    <div class="transform-box origin-bottomright">
+                        <div class="origin-marker"></div>
+                        <div class="box-content">Bottom Right</div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Bottom Right</h3>
+                        <code>transform-origin: 100% 100%</code>
+                    </div>
+                </div>
+
+                <!-- Custom -->
+                <div class="card">
+                    <div class="transform-box origin-custom">
+                        <div class="origin-marker"></div>
+                        <div class="box-content">Custom</div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Custom Position</h3>
+                        <code>transform-origin: 30% 70%</code>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: 3D Transforms -->
+        <section class="transform-section">
+            <h2 class="section-title">3D Transforms</h2>
+            <div class="grid">
+                
+                <!-- Rotate X -->
+                <div class="card perspective-card">
+                    <div class="transform-box-3d rotate-x-3d">
+                        <div class="face front">Front</div>
+                        <div class="face back">Back</div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Rotate X</h3>
+                        <code>transform: rotateX(180deg)</code>
+                    </div>
+                </div>
+
+                <!-- Rotate Y -->
+                <div class="card perspective-card">
+                    <div class="transform-box-3d rotate-y-3d">
+                        <div class="face front">Front</div>
+                        <div class="face back">Back</div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Rotate Y</h3>
+                        <code>transform: rotateY(180deg)</code>
+                    </div>
+                </div>
+
+                <!-- Rotate Z -->
+                <div class="card perspective-card">
+                    <div class="transform-box rotate-z-3d">
+                        <div class="box-content">Z-Axis</div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Rotate Z</h3>
+                        <code>transform: rotateZ(45deg)</code>
+                    </div>
+                </div>
+
+                <!-- 3D Cube -->
+                <div class="card perspective-card">
+                    <div class="cube">
+                        <div class="cube-face cube-front">1</div>
+                        <div class="cube-face cube-back">2</div>
+                        <div class="cube-face cube-right">3</div>
+                        <div class="cube-face cube-left">4</div>
+                        <div class="cube-face cube-top">5</div>
+                        <div class="cube-face cube-bottom">6</div>
+                    </div>
+                    <div class="card-info">
+                        <h3>3D Cube</h3>
+                        <code>transform-style: preserve-3d</code>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Combined Transforms -->
+        <section class="transform-section">
+            <h2 class="section-title">Combined Transformations</h2>
+            <div class="grid">
+                
+                <!-- Scale + Rotate -->
+                <div class="card">
+                    <div class="transform-box combined-1">
+                        <div class="box-content">Scale + Rotate</div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Scale + Rotate</h3>
+                        <code>scale(1.2) rotate(15deg)</code>
+                    </div>
+                </div>
+
+                <!-- Translate + Scale -->
+                <div class="card">
+                    <div class="transform-box combined-2">
+                        <div class="box-content">Move + Scale</div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Translate + Scale</h3>
+                        <code>translate(50px) scale(0.8)</code>
+                    </div>
+                </div>
+
+                <!-- Matrix -->
+                <div class="card">
+                    <div class="transform-box matrix-demo">
+                        <div class="box-content">Matrix</div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Matrix</h3>
+                        <code>matrix(1, 0.3, 0.3, 1, 0, 0)</code>
+                    </div>
+                </div>
+
+                <!-- Complex Chain -->
+                <div class="card">
+                    <div class="transform-box complex-demo">
+                        <div class="box-content">Complex</div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Transform Chain</h3>
+                        <code>translate scale rotate skew</code>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Transition Animations -->
+        <section class="transform-section">
+            <h2 class="section-title">Transition Animations</h2>
+            <div class="grid">
+                
+                <!-- Smooth Transition -->
+                <div class="card">
+                    <div class="transform-box transition-smooth">
+                        <div class="box-content">Smooth</div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Smooth Ease</h3>
+                        <code>transition: all 0.5s ease</code>
+                    </div>
+                </div>
+
+                <!-- Bounce Transition -->
+                <div class="card">
+                    <div class="transform-box transition-bounce">
+                        <div class="box-content">Bounce</div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Bounce Effect</h3>
+                        <code>cubic-bezier(0.68, -0.55, 0.265, 1.55)</code>
+                    </div>
+                </div>
+
+                <!-- Slow Motion -->
+                <div class="card">
+                    <div class="transform-box transition-slow">
+                        <div class="box-content">Slow</div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Slow Motion</h3>
+                        <code>transition: all 1s ease-in-out</code>
+                    </div>
+                </div>
+
+                <!-- Step Animation -->
+                <div class="card">
+                    <div class="transform-box transition-step">
+                        <div class="box-content">Steps</div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Step Animation</h3>
+                        <code>transition with steps</code>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Interactive Playground -->
+        <section class="transform-section playground-section">
+            <h2 class="section-title">Interactive Playground</h2>
+            <div class="playground">
+                <div class="playground-stage">
+                    <div class="playground-box" id="playgroundBox">
+                        <div class="box-content">Transform Me!</div>
+                    </div>
+                </div>
+                <div class="playground-controls">
+                    <div class="control-group">
+                        <label>Rotate X: <span id="rotateXVal">0</span>°</label>
+                        <input type="range" id="rotateX" min="-360" max="360" value="0">
+                    </div>
+                    <div class="control-group">
+                        <label>Rotate Y: <span id="rotateYVal">0</span>°</label>
+                        <input type="range" id="rotateY" min="-360" max="360" value="0">
+                    </div>
+                    <div class="control-group">
+                        <label>Rotate Z: <span id="rotateZVal">0</span>°</label>
+                        <input type="range" id="rotateZ" min="-360" max="360" value="0">
+                    </div>
+                    <div class="control-group">
+                        <label>Scale: <span id="scaleVal">1</span></label>
+                        <input type="range" id="scale" min="0.1" max="2" step="0.1" value="1">
+                    </div>
+                    <div class="control-group">
+                        <label>Translate X: <span id="translateXVal">0</span>px</label>
+                        <input type="range" id="translateX" min="-100" max="100" value="0">
+                    </div>
+                    <div class="control-group">
+                        <label>Translate Y: <span id="translateYVal">0</span>px</label>
+                        <input type="range" id="translateY" min="-100" max="100" value="0">
+                    </div>
+                    <button class="reset-btn" id="resetBtn">Reset All</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="CSS_Transform_Gallery.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+body{
+font-family:Roboto;
+}
+
+/* Google Fonts */
+
+.font1{
+font-family:'Roboto', sans-serif;
+}
+
+.font2{
+font-family:'Lobster', cursive;
+}
+
+.font3{
+font-family:'Poppins', sans-serif;
+}
+
+
+/* Font Sizes */
+
+.px{
+font-size:20px;
+}
+
+.em{
+font-size:2em;
+}
+
+.rem{
+font-size:2rem;
+}
+
+.percent{
+font-size:150%;
+}
+
+
+/* Text Alignment */
+
+.left{
+text-align:left;
+}
+
+.center{
+text-align:center;
+}
+
+.right{
+text-align:right;
+}
+
+
+/* Decoration */
+
+.underline{
+text-decoration:underline;
+}
+
+.uppercase{
+text-transform:uppercase;
+}
+
+.capitalize{
+text-transform:capitalize;
+}
+
+
+/* Text Shadow */
+
+.shadow{
+font-size:30px;
+text-shadow:2px 2px 5px gray;
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nebula Registration Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Form_Styling.css">
+</head>
+<body class="bg-animate min-h-screen flex items-center justify-center p-4 relative">
+
+    <!-- Background Orbs -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <!-- Main Card -->
+    <div class="glass-card w-full max-w-md rounded-2xl p-8 relative z-10 transform transition-all duration-500 hover:shadow-[0_0_40px_rgba(99,102,241,0.2)]">
+        
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 mb-4 shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+                </svg>
+            </div>
+            <h1 class="text-3xl font-bold text-white mb-2 tracking-tight">Create Account</h1>
+            <p class="text-slate-400 text-sm">Join the Nebula community today</p>
+        </div>
+
+        <!-- Form -->
+        <form id="registrationForm" novalidate>
+            
+            <!-- Name Field -->
+            <div class="input-group">
+                <input type="text" id="fullName" class="custom-input" placeholder=" " required autocomplete="off">
+                <div class="input-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                </div>
+                <label for="fullName" class="floating-label">Full Name</label>
+                <span class="error-msg">Please enter your full name</span>
+            </div>
+
+            <!-- Email Field -->
+            <div class="input-group">
+                <input type="email" id="email" class="custom-input" placeholder=" " required autocomplete="off">
+                <div class="input-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
+                    </svg>
+                </div>
+                <label for="email" class="floating-label">Email Address</label>
+                <span class="error-msg">Please enter a valid email address</span>
+            </div>
+
+            <!-- Role Select -->
+            <div class="input-group">
+                <select id="role" class="custom-input" required>
+                    <option value="" disabled selected>Select your role...</option>
+                    <option value="developer">Developer</option>
+                    <option value="designer">Designer</option>
+                    <option value="manager">Product Manager</option>
+                    <option value="other">Other</option>
+                </select>
+                <div class="input-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                </div>
+                <div class="select-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </div>
+                <span class="error-msg" style="bottom: -1.25rem;">Please select a role</span>
+            </div>
+
+            <!-- Password Field -->
+            <div class="input-group">
+                <input type="password" id="password" class="custom-input" placeholder=" " required>
+                <div class="input-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                </div>
+                <label for="password" class="floating-label">Password</label>
+                <button type="button" id="togglePassword" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-slate-400 hover:text-white transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="eyeIcon">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                </button>
+                <span class="error-msg">Password must be at least 8 characters</span>
+            </div>
+
+            <!-- Terms Checkbox -->
+            <label class="custom-checkbox">
+                <input type="checkbox" id="terms">
+                <div class="checkmark">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                </div>
+                <span class="text-slate-400 text-sm select-none">I agree to the <a href="#" class="text-indigo-400 hover:text-indigo-300 underline">Terms of Service</a></span>
+            </label>
+            <div id="termsError" class="text-rose-500 text-xs mb-4 hidden -mt-3 ml-8">You must agree to the terms</div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="glow-btn w-full flex items-center justify-center group">
+                <span class="btn-text">Create Account</span>
+                <div class="spinner"></div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+            </button>
+
+        </form>
+
+        <!-- Footer -->
+        <div class="mt-6 text-center">
+            <p class="text-slate-500 text-sm">
+                Already have an account? 
+                <a href="#" class="text-indigo-400 hover:text-indigo-300 font-medium transition-colors">Sign in</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="success-modal">
+        <div class="success-content">
+            <div class="checkmark-circle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+                </svg>
+            </div>
+            <h2 class="text-3xl font-bold text-white mb-2">Welcome Aboard!</h2>
+            <p class="text-slate-300 mb-8">Your account has been successfully created.</p>
+            <button onclick="resetForm()" class="px-8 py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-lg font-medium transition-colors border border-slate-600">
+                Continue to Dashboard
+            </button>
+        </div>
+    </div>
+
+    <script src="Form_Styling.js"></script>
+</body>
+</html>

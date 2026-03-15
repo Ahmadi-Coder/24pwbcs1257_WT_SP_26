@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Cards Showcase</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Card_Component.css">
+</head>
+<body class="bg-gray-50 min-h-screen py-16 px-4">
+
+    <!-- Header -->
+    <div class="text-center mb-16">
+        <h1 class="text-4xl font-bold text-gray-900 mb-4">Featured Collection</h1>
+        <p class="text-gray-600 max-w-2xl mx-auto">Discover our premium selection of products designed for modern living</p>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Card 1 -->
+        <div class="product-card">
+            <div class="card-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&q=80" alt="Headphones" class="card-image">
+                <div class="card-badge">New</div>
+                <div class="card-overlay">
+                    <button class="quick-view-btn">Quick View</button>
+                </div>
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">Premium Wireless Headphones</h3>
+                <p class="card-description">Immersive sound with active noise cancellation and 30-hour battery life.</p>
+                <div class="card-footer">
+                    <span class="card-price">$299</span>
+                    <button class="card-cta">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="product-card">
+            <div class="card-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&q=80" alt="Smart Watch" class="card-image">
+                <div class="card-badge badge-sale">-20%</div>
+                <div class="card-overlay">
+                    <button class="quick-view-btn">Quick View</button>
+                </div>
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">Smart Watch Pro</h3>
+                <p class="card-description">Track your fitness, monitor health, and stay connected on the go.</p>
+                <div class="card-footer">
+                    <span class="card-price">$199</span>
+                    <span class="card-price-old">$249</span>
+                    <button class="card-cta">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="product-card">
+            <div class="card-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&q=80" alt="Sneakers" class="card-image">
+                <div class="card-overlay">
+                    <button class="quick-view-btn">Quick View</button>
+                </div>
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">Urban Runner Sneakers</h3>
+                <p class="card-description">Lightweight design with responsive cushioning for all-day comfort.</p>
+                <div class="card-footer">
+                    <span class="card-price">$129</span>
+                    <button class="card-cta">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="product-card">
+            <div class="card-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=500&q=80" alt="Camera" class="card-image">
+                <div class="card-badge">Best Seller</div>
+                <div class="card-overlay">
+                    <button class="quick-view-btn">Quick View</button>
+                </div>
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">Instant Camera</h3>
+                <p class="card-description">Capture memories instantly with retro style and modern features.</p>
+                <div class="card-footer">
+                    <span class="card-price">$89</span>
+                    <button class="card-cta">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="product-card">
+            <div class="card-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=500&q=80" alt="Plant" class="card-image">
+                <div class="card-overlay">
+                    <button class="quick-view-btn">Quick View</button>
+                </div>
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">Monstera Deliciosa</h3>
+                <p class="card-description">Bring nature indoors with this stunning, easy-care houseplant.</p>
+                <div class="card-footer">
+                    <span class="card-price">$45</span>
+                    <button class="card-cta">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="product-card">
+            <div class="card-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=500&q=80" alt="Sunglasses" class="card-image">
+                <div class="card-badge badge-sale">-15%</div>
+                <div class="card-overlay">
+                    <button class="quick-view-btn">Quick View</button>
+                </div>
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">Classic Sunglasses</h3>
+                <p class="card-description">UV protection with timeless style. Perfect for any occasion.</p>
+                <div class="card-footer">
+                    <span class="card-price">$75</span>
+                    <span class="card-price-old">$89</span>
+                    <button class="card-cta">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="Card_Component.js"></script>
+</body>
+</html>

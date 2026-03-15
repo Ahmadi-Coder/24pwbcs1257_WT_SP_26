@@ -1,0 +1,340 @@
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: #0f172a;
+    overflow-x: hidden;
+}
+
+/* Animated Background */
+.bg-animate {
+    background: linear-gradient(-45deg, #0f172a, #1e1b4b, #312e81, #0f172a);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Floating Orbs */
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 0;
+    animation: float 10s infinite ease-in-out;
+}
+.orb-1 { width: 300px; height: 300px; background: #4f46e5; top: -50px; left: -50px; opacity: 0.4; animation-delay: 0s; }
+.orb-2 { width: 200px; height: 200px; background: #ec4899; bottom: 10%; right: -20px; opacity: 0.3; animation-delay: 2s; }
+.orb-3 { width: 150px; height: 150px; background: #06b6d4; bottom: -50px; left: 30%; opacity: 0.4; animation-delay: 4s; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-20px) scale(1.05); }
+}
+
+/* Glassmorphism Card */
+.glass-card {
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* Input Styling */
+.input-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.custom-input {
+    width: 100%;
+    padding: 1rem 1rem 1rem 3rem;
+    background: rgba(15, 23, 42, 0.6);
+    border: 2px solid rgba(148, 163, 184, 0.2);
+    border-radius: 0.75rem;
+    color: #f8fafc;
+    font-size: 1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    outline: none;
+}
+
+.custom-input:focus {
+    border-color: #818cf8;
+    background: rgba(15, 23, 42, 0.8);
+    box-shadow: 0 0 0 4px rgba(129, 140, 248, 0.1);
+    transform: translateY(-2px);
+}
+
+.custom-input.error {
+    border-color: #f43f5e;
+    animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+.custom-input.error:focus {
+    box-shadow: 0 0 0 4px rgba(244, 63, 94, 0.1);
+}
+
+.custom-input.success {
+    border-color: #10b981;
+}
+
+@keyframes shake {
+    10%, 90% { transform: translate3d(-1px, 0, 0); }
+    20%, 80% { transform: translate3d(2px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+    40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+/* Input Icons */
+.input-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    transition: color 0.3s ease;
+    pointer-events: none;
+}
+
+.custom-input:focus + .input-icon {
+    color: #818cf8;
+}
+
+.custom-input.error:focus + .input-icon {
+    color: #f43f5e;
+}
+
+/* Floating Label */
+.floating-label {
+    position: absolute;
+    left: 3rem;
+    top: 1rem;
+    color: #94a3b8;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    background: transparent;
+    padding: 0 0.25rem;
+}
+
+.custom-input:focus ~ .floating-label,
+.custom-input:not(:placeholder-shown) ~ .floating-label {
+    top: -0.6rem;
+    left: 0.8rem;
+    font-size: 0.75rem;
+    color: #818cf8;
+    background: #1e293b;
+    border-radius: 4px;
+}
+
+.custom-input.error:focus ~ .floating-label,
+.custom-input.error:not(:placeholder-shown) ~ .floating-label {
+    color: #f43f5e;
+}
+
+/* Error Message */
+.error-msg {
+    position: absolute;
+    bottom: -1.25rem;
+    left: 0;
+    font-size: 0.75rem;
+    color: #f43f5e;
+    opacity: 0;
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+}
+
+.custom-input.error ~ .error-msg {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Custom Select */
+select.custom-input {
+    appearance: none;
+    cursor: pointer;
+}
+
+.select-arrow {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    pointer-events: none;
+    transition: transform 0.3s ease;
+}
+
+.custom-input:focus ~ .select-arrow {
+    transform: translateY(-50%) rotate(180deg);
+    color: #818cf8;
+}
+
+/* Button */
+.glow-btn {
+    position: relative;
+    background: linear-gradient(90deg, #4f46e5, #ec4899);
+    color: white;
+    font-weight: 600;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(79, 70, 229, 0.3);
+}
+
+.glow-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(236, 72, 153, 0.5);
+}
+
+.glow-btn:active {
+    transform: translateY(1px);
+}
+
+.glow-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: 0.5s;
+}
+
+.glow-btn:hover::after {
+    left: 100%;
+}
+
+/* Checkbox */
+.custom-checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+}
+
+.custom-checkbox input {
+    display: none;
+}
+
+.checkmark {
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 2px solid #64748b;
+    border-radius: 0.25rem;
+    margin-right: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.custom-checkbox input:checked + .checkmark {
+    background: #4f46e5;
+    border-color: #4f46e5;
+}
+
+.custom-checkbox input:checked + .checkmark svg {
+    display: block;
+}
+
+.checkmark svg {
+    display: none;
+    width: 0.875rem;
+    height: 0.875rem;
+    color: white;
+}
+
+/* Success Modal */
+.success-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.9);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.success-modal.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.success-content {
+    text-align: center;
+    transform: scale(0.8);
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.success-modal.active .success-content {
+    transform: scale(1);
+}
+
+.checkmark-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #10b981;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.5);
+    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes popIn {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #f00;
+    animation: confetti-fall 3s linear forwards;
+}
+
+@keyframes confetti-fall {
+    0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+/* Loading Spinner */
+.spinner {
+    display: none;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+    margin-left: 10px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.glow-btn.loading .spinner {
+    display: inline-block;
+}
+
+.glow-btn.loading .btn-text {
+    display: none;
+}
